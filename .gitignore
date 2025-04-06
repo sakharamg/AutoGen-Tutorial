@@ -1,0 +1,18 @@
+# Secrets
+config.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Envs
+.env
+.venv
+*.env
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints

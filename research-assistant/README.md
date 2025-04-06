@@ -1,83 +1,82 @@
-# AutoGen Tutorial 🚀
+# 🧠 AutoGen Research Assistant (Multi-Agent)
 
-This tutorial walks you through building agentic AI systems using Microsoft's AutoGen and OpenAI. It's designed in modular stages, starting with minimal working examples (pilot) and gradually progressing toward more complex agent setups like dataset assistants and planners.
+This weekend project is a modular, multi-agent research assistant built using Microsoft's [AutoGen](https://github.com/microsoft/autogen). It combines LLM agents with tool use, planning, and code execution to automate tasks like literature review, planning, and Python coding.
 
 ---
 
-## 📁 Project Structure
+## 🚀 Features
 
+- **LiteratureAgent**: Uses `arxiv` tool to find relevant research papers
+- **PlannerAgent**: Designs experiments given a research question
+- **CodeAgent**: Generates Python code and executes it
+- **UserProxyAgent**: Initiates the task, can be set to `TERMINAL` or `NEVER`
+- **GroupChatManager**: Coordinates conversation between agents
+
+---
+
+## 🛠️ Setup
+
+### 1. Create and activate a conda environment
+
+```bash
+conda create -n autogen-research python=3.10 -y
+conda activate autogen-research
 ```
-autogen-tutorial/
-├── 0_Pilot/               # Minimal working examples
-│   ├── dummy_openai.py    # Basic OpenAI call using config.yaml
-│   └── dummy_autogen.py   # Minimal AutoGen agent chat
-├── config.yaml            # Stores your OpenAI API key (ignored via .gitignore)
-├── research-assistant     # Multi-agent system that does literature survey, analysis, code and execute
-├── requirements.txt       # Project dependencies
-├── .gitignore             # Prevents secrets and unwanted files from being committed
-└── README.md              # You're reading it :)
+
+### 2. Install dependencies
+
+```bash
+pip install autogen[chat,tools] autogen-core autogen-agentchat autogen-ext[openai]
+pip install pyyaml arxiv tiktoken
 ```
 
 ---
 
-## 🧪 Quick Start
+## 🔑 Configure OpenAI
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/sakharamg/autogen-tutorial.git
-   cd autogen-tutorial
-   ```
+Edit `config.yaml`:
 
-2. **Create a Conda environment**:
-   ```bash
-   conda create -n autogen-env python=3.10 -y
-   conda activate autogen-env
-   ```
-
-3. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Create `config.yaml`** (this is **not committed** for security):
-   ```yaml
-   openai:
-     api_key: "sk-..."  # Your OpenAI API key
-     model: "gpt-3.5-turbo"
-   ```
-
-5. **Run the pilot scripts**:
-   ```bash
-   cd 0_Pilot
-   python dummy_openai.py
-   python dummy_autogen.py
-   ```
+```yaml
+config_list:
+  - model: gpt-4
+    api_key: sk-your-real-openai-key-here
+```
 
 ---
 
-## 🔐 Security Notes
+## 🧪 Run the Research Assistant
 
-- Do **not** share your `config.yaml` — it contains your OpenAI secret key.
-- This file is listed in `.gitignore` to avoid accidental commits.
+```bash
+python main.py
+```
 
----
-
-## 🧱 What’s Next?
-
-This project will evolve in stages:
-
-- `data-assistant/`: Multi agents for coding and debugging
-
-Stay tuned 👀
+Agents will:
+1. Find relevant papers
+2. Plan an experiment
+3. Generate and execute code
+4. Save output to: `data/results/run_output.txt`
 
 ---
 
-## 🤝 Contributions
+## 📁 Directory Structure
 
-Feel free to fork the project, create issues, or suggest features to improve this tutorial.
+```text
+research-assistant/
+├── agents/           # Agent definitions
+├── tools/            # External tools (e.g., Arxiv search)
+├── utils/            # Shared config and helper code
+├── data/
+│   └── results/      # Output is stored here (ignored by Git)
+├── main.py           # Entry point
+├── config.yaml       # Your OpenAI config
+├── .gitignore
+└── README.md         # This file
+```
 
 ---
 
-## 🧠 Author
+## 🧠 Credits & Inspirations
 
-Built with ❤️ by [Sakharam Gawade](https://www.linkedin.com/in/sakharam-gawade/) — exploring agentic AI and research-oriented tooling for real-world LLM applications.
+- [AutoGen by Microsoft](https://github.com/microsoft/autogen)
+- ArXiv API via `arxiv` Python package
+- Agent structure inspired by ReAct + Planner-Code loop

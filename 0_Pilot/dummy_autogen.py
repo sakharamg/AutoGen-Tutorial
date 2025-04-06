@@ -14,7 +14,7 @@ os.environ["OPENAI_API_KEY"] = yaml_config["openai"]["api_key"]
 async def main() -> None:
     model_client = OpenAIChatCompletionClient(model=yaml_config["openai"].get("model", "gpt-3.5-turbo"))
     agent = AssistantAgent("assistant", model_client=model_client)
-    print(await agent.run(task="Say 'a fun fact about mother earth!'"))
+    print(await agent.run(task="Say a fun fact about mother earth!"))
     await model_client.close()
 
 asyncio.run(main())

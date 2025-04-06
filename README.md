@@ -61,10 +61,15 @@ autogen-tutorial/
 - This file is listed in `.gitignore` to avoid accidental commits.
 
 ---
+## 🚧 Progress and Future Plan:
 
-## 🧱 What’s Next?
+### ✅ What’s Done?
+- `0_Pilot/`: Code to test that setup is done correctly
+- `research-assistant/`: Multi-agent system that does literature survey, analysis, code and execute
+----
 
-This project will evolve in stages:
+### 🧱 What’s Next?
+
 
 - `data_gen-assistant/`: Multi agents for generating diverse data
 

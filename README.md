@@ -11,6 +11,7 @@ autogen-tutorial/
 ├── 0_Pilot/               # Minimal working examples
 │   ├── dummy_openai.py    # Basic OpenAI call using config.yaml
 │   └── dummy_autogen.py   # Minimal AutoGen agent chat
+├── research-assistant     # Multi-agent system that does literature survey, analysis, code and execute
 ├── config.yaml            # Stores your OpenAI API key (ignored via .gitignore)
 ├── requirements.txt       # Project dependencies
 ├── .gitignore             # Prevents secrets and unwanted files from being committed

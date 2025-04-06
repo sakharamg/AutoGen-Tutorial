@@ -65,7 +65,7 @@ autogen-tutorial/
 
 This project will evolve in stages:
 
-- `1_Code_Debug/`: Multi agents for coding and debugging
+- `data_gen-assistant/`: Multi agents for generating diverse data
 
 Stay tuned 👀
 

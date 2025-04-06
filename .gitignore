@@ -14,5 +14,19 @@ __pycache__/
 .vscode/
 .idea/
 
+# Cache Files
+.cache/
+
+# Ignore old, broken and experimental code
+broken/
+legacy/
+experimental/
+
 # Jupyter
 .ipynb_checkpoints
+
+# Ignore everything inside data/
+/research-assistant/data/*
+
+# But keep the data/ folder itself
+!/research-assistant/data/.gitkeep

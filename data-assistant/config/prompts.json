@@ -1,0 +1,4 @@
+{
+    "chat_between_friends": "Create two personas for a casual chat and simulate them. Each persona should include name, age, city, interests, and personality. Output should only be the persona descriptions, ready to be assigned to AI characters.\n\nFormat:\nPersona A:\nName: ...\nAge: ...\nCity: ...\nInterests: ...\nPersonality: ...\n\nPersona B:\nName: ...\nAge: ...\nCity: ...\nInterests: ...\nPersonality: ...\n\nShared Event: ..."
+}
+  

@@ -17,6 +17,12 @@ __pycache__/
 # Cache Files
 .cache/
 
+# Memory Files
+*.pkl
+
+# Output Files
+outputs/
+
 # Ignore old, broken and experimental code
 broken/
 legacy/
